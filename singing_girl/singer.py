@@ -1,7 +1,8 @@
 #! -*- coding: utf8 -*-
-
-from dicts import *
+from __future__ import division
+from .dicts import digitos, decenas, centenas, exponentes
 from decimal import Decimal, InvalidOperation
+
 
 class Singer(object):
 
@@ -12,7 +13,7 @@ class Singer(object):
         """
         Calcula el numero maximo que se puede imprimir
         """
-        self.exponentes = sorted(exponentes.keys(), reverse=True)
+        self.exponentes = sorted(list(exponentes.keys()), reverse=True)
         exp = self.exponentes[0]
         self.limite = 10 ** (exp*2) - 1
 
@@ -52,6 +53,7 @@ class Singer(object):
     def __to_text(self, number, indice = 0, sing=False):
         """Convierte un numero a texto, recursivamente"""
 
+        number = int(number)
         exp = self.exponentes[indice]
         indice += 1
         divisor = 10 ** exp
@@ -60,7 +62,7 @@ class Singer(object):
         else:
             func = self.__to_text
         if divisor < number:
-            division = number / divisor
+            division = number // divisor
             resto = number % divisor
             if resto:
                 der = func(resto, indice, sing)
@@ -87,7 +89,7 @@ class Singer(object):
                         return "%s %s" % (izq, exponentes[exp])
 
 
-        elif divisor == number:
+        elif divisor == int(number):
             if exp == 3:
                 return exponentes[exp]
             else:
@@ -98,6 +100,7 @@ class Singer(object):
 
     def __numero_tres_cifras(self, number, indice=None, sing=False):
         """Convierte a texto numeros de tres cifras"""
+        number = int(number)
         if sing and number == 1:
             return 'un'
         elif number <= 15:
@@ -113,7 +116,7 @@ class Singer(object):
             return 'veinti%s' % self.__numero_tres_cifras(number%10, None, sing)
 
         elif number < 100:
-            texto = decenas[number/10]
+            texto = decenas[number // 10]
             resto = number % 10
             if resto:
                 texto += ' y %s' % self.__numero_tres_cifras(resto, None, sing)
@@ -123,7 +126,7 @@ class Singer(object):
             return 'cien'
 
         if number < 1000:
-            texto = centenas[number/100]
+            texto = centenas[number // 100]
             resto = number % 100
             if resto:
                 texto += ' %s' % self.__numero_tres_cifras(resto, None, sing)

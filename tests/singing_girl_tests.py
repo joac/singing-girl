@@ -78,6 +78,7 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertEquals(self.trad.sing(999), 'novecientos noventa y nueve')
 
     def test_miles(self):
+        self.assertEquals(self.trad.sing(4326), 'cuatro mil trescientos veintiseis')
         self.assertEquals(self.trad.sing(7532), 'siete mil quinientos treinta y dos')
         self.assertEquals(self.trad.sing(1014), 'mil catorce')
         self.assertEquals(self.trad.sing(21000), 'veintiun mil')

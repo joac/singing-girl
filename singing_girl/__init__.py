@@ -1,6 +1,6 @@
 #! -*- coding: utf8 -*-
 from __future__ import print_function
-from singer import Singer
+from .singer import Singer
 
 
 if __name__ == '__main__':
