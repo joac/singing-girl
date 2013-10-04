@@ -38,7 +38,7 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertEquals(self.trad.sing(23), 'veintitrés')
         self.assertEquals(self.trad.sing(24), 'veinticuatro')
         self.assertEquals(self.trad.sing(25), 'veinticinco')
-        self.assertEquals(self.trad.sing(26), 'veintiseis')
+        self.assertEquals(self.trad.sing(26), 'veintiséis')
         self.assertEquals(self.trad.sing(27), 'veintisiete')
         self.assertEquals(self.trad.sing(28), 'veintiocho')
         self.assertEquals(self.trad.sing(29), 'veintinueve')
