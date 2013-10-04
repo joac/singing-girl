@@ -33,8 +33,8 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertEquals(self.trad.sing(19), 'diecinueve')
         self.assertEquals(self.trad.sing(20), 'veinte')
         self.assertEquals(self.trad.sing(21), 'veintiuno')
-        self.assertEquals(self.trad.sing(22), 'veintidos')
-        self.assertEquals(self.trad.sing(23), 'veintitres')
+        self.assertEquals(self.trad.sing(22), 'veintidós')
+        self.assertEquals(self.trad.sing(23), 'veintitrés')
         self.assertEquals(self.trad.sing(24), 'veinticuatro')
         self.assertEquals(self.trad.sing(25), 'veinticinco')
         self.assertEquals(self.trad.sing(26), 'veintiseis')
@@ -87,8 +87,8 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertEquals(self.trad.sing(916543), 'novecientos dieciseis mil quinientos cuarenta y tres')
 
     def test_numeros_grandes(self):
-        self.assertEquals(self.trad.sing(1000000), 'un millon');
-        self.assertEquals(self.trad.sing(1000021), 'un millon veintiuno');
+        self.assertEquals(self.trad.sing(1000000), 'un millón');
+        self.assertEquals(self.trad.sing(1000021), 'un millón veintiuno');
         self.assertEquals(self.trad.sing(41000021), 'cuarenta y un millones veintiuno');
         self.assertEquals(self.trad.sing(41000021), 'cuarenta y un millones veintiuno');
 
