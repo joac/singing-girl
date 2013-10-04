@@ -1,4 +1,5 @@
 #! -*- coding: utf8 -*-
+from __future__ import unicode_literals
 
 digitos = [
         'cero',
@@ -50,8 +51,8 @@ exponentes = {
         3:'mil',
         6:'millon',
         12:'billon',
-        24:'trillon',
-        48:'cuatrillon', #mas exponentes agregar acá
+        18:'trillon',
+        24:'cuatrillon', #mas exponentes agregar acá
     }
 
 

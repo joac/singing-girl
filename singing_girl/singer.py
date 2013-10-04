@@ -1,5 +1,5 @@
 #! -*- coding: utf8 -*-
-from __future__ import division
+from __future__ import division, unicode_literals
 from .dicts import digitos, decenas, centenas, exponentes
 from decimal import Decimal, InvalidOperation
 
