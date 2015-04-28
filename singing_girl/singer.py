@@ -21,7 +21,7 @@ class Singer(object):
         """Interfaz publica para convertir numero a texto"""
 
         if type(number) != Decimal:
-            number = Decimal(number)
+            number = Decimal(str(number))
 
         if number > self.limite:
             msg = "El maximo numero procesable es %s" % self.limite
