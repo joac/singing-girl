@@ -37,7 +37,7 @@ class Singer(object):
         try:
             dec = (number % 1).quantize(Decimal('0.01'))
         except InvalidOperation:
-            #Usamos strings para obtener la parte decimal
+            # Usamos strings para obtener la parte decimal
             dec_tp = number.as_tuple()
             if dec_tp.exponent < 0:
                 digit_list = [str(n) for n in dec_tp.digits[dec_tp.exponent:]]
