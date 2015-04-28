@@ -8,8 +8,7 @@ Singing Girl is a lib to convert numbers in its equivalent string text represent
 Simple as:
 
 ```python
->>> from singing_girl import Singer
->>> singer = Singer()
->>> singer.sing(424242)
+>>> from singing_girl import sing
+>>> sing(424242)
 'cuatrocientos veinticuatro mil doscientos cuarenta y dos'
 ```
