@@ -6,5 +6,9 @@ python:
   - "3.3"
   - "3.4"
   - "nightly"
-# command to run tests
-script: nosetests
+install:
+  - pip install coveralls
+script:
+  nosetests --cover-branches --with-coverage --cover-package singing_girl
+after_success:
+  coveralls
