@@ -3,9 +3,9 @@ from distutils.core import setup
 
 setup(
     name='singing-girl',
-    version='0.0.2',
+    version='0.0.3',
     description=u'Library to convert number literals, to spanish equivalent text strings',
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     author=u'Joaquín Sorianello',
     url='https://github.com/joac/singing-girl',
     packages=['singing_girl'],
