@@ -47,11 +47,11 @@ centenas = [
 
 exponentes = {
 #        2:'cien',
-        3:'mil',
-        6:'millon',
-        12:'billon',
-        24:'trillon',
-        48:'cuatrillon', #mas exponentes agregar acá
+        3: 'mil',
+        6: 'millon',
+        12: 'billon',
+        18: 'trillon',
+        24: 'cuatrillon', #mas exponentes agregar acá
     }
 
 
