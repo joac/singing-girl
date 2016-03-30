@@ -129,8 +129,7 @@ class TestTraductorNumeros(unittest.TestCase):
                         'ciento veintitres mil cuatrocientos cincuenta y seis con 67/100')
 
     def test_value_error_raised_on_invalid_number(self):
-        with self.assertRaises(ValueError):
-            sing(10 ** 30)
+        self.assertRaises(ValueError, sing, 10 ** 30)
 
 
 if __name__ == '__main__':
