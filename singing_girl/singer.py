@@ -15,7 +15,7 @@ class Singer(object):
         """
         self.exponentes = sorted(list(exponentes.keys()), reverse=True)
         exp = self.exponentes[0]
-        self.limite = 10 ** (exp*2) - 1
+        self.limite = 10 ** (exp + 6) - 1
 
     def sing(self, number):
         """Interfaz publica para convertir numero a texto"""
@@ -24,7 +24,8 @@ class Singer(object):
             number = Decimal(str(number))
 
         if number > self.limite:
-            msg = "El maximo numero procesable es %s" % self.limite
+            msg = "El maximo numero procesable es {} ({})".format(self.limite,
+                                                                  self.sing(self.limite))
             raise ValueError(msg)
         else:
             texto = self.__to_text(int(number))
