@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name='singing-girl',
-    version='0.0.4',
+    version='0.0.5',
     description=u'Library to convert number literals, to spanish equivalent text strings',
     long_description=open('README.rst').read(),
     author=u'Joaquín Sorianello',
