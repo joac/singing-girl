@@ -82,7 +82,7 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertSing(4326, 'cuatro mil trescientos veintiséis')
         self.assertSing(7532, 'siete mil quinientos treinta y dos')
         self.assertSing(1014, 'mil catorce')
-        self.assertSing(21000, 'veintiun mil')
+        self.assertSing(21000, 'veintiún mil')
         self.assertSing(71000, 'setenta y un mil')
 
         self.assertSing(916543, 'novecientos dieciséis mil quinientos cuarenta y tres')
