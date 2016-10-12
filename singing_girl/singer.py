@@ -62,13 +62,16 @@ class Singer(object):
         exp = self.exponentes[indice]
         indice += 1
         divisor = 10 ** exp
+
         if exp == 3:
             func = self.__numero_tres_cifras
         else:
             func = self.__to_text
+        
         if divisor < number:
             division = number // divisor
             resto = number % divisor
+        
             if resto:
                 der = func(resto, indice, sing)
             else:
@@ -139,9 +142,9 @@ class Singer(object):
 
         if number < 30:
             if sing:
-                return especiales_masculino[number]
-            else:
                 return especiales_apocopado[number]
+            else:
+                return especiales_masculino[number]
 
         elif number < 100:
             texto = decenas[number // 10]
