@@ -98,8 +98,8 @@ class TestTraductorNumeros(unittest.TestCase):
     def test_numeros_grandes(self):
         self.assertSing(1000000, 'un millón')
         self.assertSing(1000021, 'un millón veintiuno')
-        self.assertSing(41000021, 'cuarenta y un millónes veintiuno')
-        self.assertSing(41000021, 'cuarenta y un millónes veintiuno')
+        self.assertSing(41000021, 'cuarenta y un millones veintiuno')
+        self.assertSing(41000021, 'cuarenta y un millones veintiuno')
 
         self.assertSing(416010015, 'cuatrocientos dieciséis millones diez mil quince')
         self.assertSing(123123123123123123123456123456,
