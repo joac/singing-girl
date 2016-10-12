@@ -79,26 +79,42 @@ class Singer(object):
             else:
                 izq = func(division, indice, True)
                 if der:
+                    # if division == 1:
+                    #     return "un %s %s" % (exponentes_plural[exp], der)
+                    # elif exp > 3:
+                    #     return "%s %ses %s" % (izq, exponentes_plural[exp], der)
+                    # else:
+                    #     return "%s %s %s" % (izq, exponentes_plural[exp], der)
                     if division == 1:
-                        return "un %s %s" % (exponentes_plural[exp], der)
+                        return "%s %s" % (exponentes_singular[exp], der)
                     elif exp > 3:
-                        return "%s %ses %s" % (izq, exponentes_plural[exp], der)
+                        return "%s %s %s" % (izq, exponentes_plural[exp], der)
                     else:
                         return "%s %s %s" % (izq, exponentes_plural[exp], der)
                 else:
+                    # if division == 1:
+                    #     return "un %s" % (exponentes_plural[exp])
+                    # elif exp > 3:
+                    #     return "%s %ses" % (izq, exponentes_plural[exp])
+                    # else:
+                    #     return "%s %s" % (izq, exponentes_plural[exp])
                     if division == 1:
-                        return "un %s" % (exponentes_plural[exp])
+                        return exponentes_singular[exp]
                     elif exp > 3:
-                        return "%s %ses" % (izq, exponentes_plural[exp])
+                        return "%s %s" % (izq, exponentes_plural[exp])
                     else:
                         return "%s %s" % (izq, exponentes_plural[exp])
 
 
         elif divisor == int(number):
+            # if exp == 3:
+            #     return exponentes_plural[exp]
+            # else:
+            #     return 'un %s' % exponentes_plural[exp]
             if exp == 3:
                 return exponentes_plural[exp]
             else:
-                return 'un %s' % exponentes_plural[exp]
+                return exponentes_singular[exp]
 
         else:
             return func(number, indice, sing)
