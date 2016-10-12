@@ -138,7 +138,10 @@ class Singer(object):
         #     return 'veinti%s' % self.__numero_tres_cifras(number%10, None, sing)
 
         if number < 30:
-            return especiales_masculino[number]
+            if sing:
+                return especiales_masculino[number]
+            else:
+                return especiales_apocopado[number]
 
         elif number < 100:
             texto = decenas[number // 10]
