@@ -34,11 +34,11 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertSing(19, 'diecinueve')
         self.assertSing(20, 'veinte')
         self.assertSing(21, 'veintiuno')
-        self.assertSing(22, 'veintidos')
-        self.assertSing(23, 'veintitres')
+        self.assertSing(22, 'veintidós')
+        self.assertSing(23, 'veintitrés')
         self.assertSing(24, 'veinticuatro')
         self.assertSing(25, 'veinticinco')
-        self.assertSing(26, 'veintiseis')
+        self.assertSing(26, 'veintiséis')
         self.assertSing(27, 'veintisiete')
         self.assertSing(28, 'veintiocho')
         self.assertSing(29, 'veintinueve')
@@ -61,7 +61,7 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertSing(100, 'cien')
         self.assertSing(111, 'ciento once')
         self.assertSing(200, 'doscientos')
-        self.assertSing(222, 'doscientos veintidos')
+        self.assertSing(222, 'doscientos veintidós')
         self.assertSing(300, 'trescientos')
         self.assertSing(333, 'trescientos treinta y tres')
         self.assertSing(400, 'cuatrocientos')
@@ -79,7 +79,7 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertSing(999, 'novecientos noventa y nueve')
 
     def test_miles(self):
-        self.assertSing(4326, 'cuatro mil trescientos veintiseis')
+        self.assertSing(4326, 'cuatro mil trescientos veintiséis')
         self.assertSing(7532, 'siete mil quinientos treinta y dos')
         self.assertSing(1014, 'mil catorce')
         self.assertSing(21000, 'veintiun mil')
@@ -103,11 +103,11 @@ class TestTraductorNumeros(unittest.TestCase):
 
         self.assertSing(416010015, 'cuatrocientos dieciseis millones diez mil quince')
         self.assertSing(123123123123123123123456123456,
-                        'ciento veintitres mil ciento veintitres cuatrillones '
-                        'ciento veintitres mil ciento veintitres trillones '
-                        'ciento veintitres mil ciento veintitres billones '
-                        'ciento veintitres mil cuatrocientos cincuenta y seis millones '
-                        'ciento veintitres mil cuatrocientos cincuenta y seis')
+                        'ciento veintitrés mil ciento veintitrés cuatrillones '
+                        'ciento veintitrés mil ciento veintitrés trillones '
+                        'ciento veintitrés mil ciento veintitrés billones '
+                        'ciento veintitrés mil cuatrocientos cincuenta y seis millones '
+                        'ciento veintitrés mil cuatrocientos cincuenta y seis')
 
     def test_decimales(self):
         self.assertSing(16.1, 'dieciseis con 10/100')
@@ -116,17 +116,17 @@ class TestTraductorNumeros(unittest.TestCase):
         self.assertSing(16.51, 'dieciseis con 51/100')
         self.assertSing(1.75, 'uno con 75/100')
         self.assertSing(Decimal('123123123123123123123456123456.33'),
-                        'ciento veintitres mil ciento veintitres cuatrillones '
-                        'ciento veintitres mil ciento veintitres trillones '
-                        'ciento veintitres mil ciento veintitres billones '
-                        'ciento veintitres mil cuatrocientos cincuenta y seis millones '
-                        'ciento veintitres mil cuatrocientos cincuenta y seis con 33/100')
+                        'ciento veintitrés mil ciento veintitrés cuatrillones '
+                        'ciento veintitrés mil ciento veintitrés trillones '
+                        'ciento veintitrés mil ciento veintitrés billones '
+                        'ciento veintitrés mil cuatrocientos cincuenta y seis millones '
+                        'ciento veintitrés mil cuatrocientos cincuenta y seis con 33/100')
         self.assertSing(Decimal('123123123123123123123456123456.67'),
-                        'ciento veintitres mil ciento veintitres cuatrillones '
-                        'ciento veintitres mil ciento veintitres trillones '
-                        'ciento veintitres mil ciento veintitres billones '
-                        'ciento veintitres mil cuatrocientos cincuenta y seis millones '
-                        'ciento veintitres mil cuatrocientos cincuenta y seis con 67/100')
+                        'ciento veintitrés mil ciento veintitrés cuatrillones '
+                        'ciento veintitrés mil ciento veintitrés trillones '
+                        'ciento veintitrés mil ciento veintitrés billones '
+                        'ciento veintitrés mil cuatrocientos cincuenta y seis millones '
+                        'ciento veintitrés mil cuatrocientos cincuenta y seis con 67/100')
 
     def test_value_error_raised_on_invalid_number(self):
         self.assertRaises(ValueError, sing, 10 ** 30)
