@@ -1,6 +1,10 @@
 #! -*- coding: utf8 -*-
 from __future__ import division
-from .dicts import digitos, decenas, centenas, exponentes
+
+# from .dicts import digitos, decenas, centenas, exponentes
+from .dicts import especiales_masculino, especiales_femenino, especiales_apocopado, decenas, centena_masculino, centena_apocopado, centena_femenino, exponentes_plural, exponentes_singular
+
+
 from decimal import Decimal, InvalidOperation
 
 
@@ -13,7 +17,7 @@ class Singer(object):
         """
         Calcula el numero maximo que se puede imprimir
         """
-        self.exponentes = sorted(list(exponentes.keys()), reverse=True)
+        self.exponentes = sorted(list(exponentes_plural.keys()), reverse=True)
         exp = self.exponentes[0]
         self.limite = 10 ** (exp + 6) - 1
 
@@ -71,30 +75,30 @@ class Singer(object):
                 der = False
 
             if exp == 3 and division == 1: #1000
-                return "%s %s" % (exponentes[exp], der)
+                return "%s %s" % (exponentes_plural[exp], der)
             else:
                 izq = func(division, indice, True)
                 if der:
                     if division == 1:
-                        return "un %s %s" % (exponentes[exp], der)
+                        return "un %s %s" % (exponentes_plural[exp], der)
                     elif exp > 3:
-                        return "%s %ses %s" % (izq, exponentes[exp], der)
+                        return "%s %ses %s" % (izq, exponentes_plural[exp], der)
                     else:
-                        return "%s %s %s" % (izq, exponentes[exp], der)
+                        return "%s %s %s" % (izq, exponentes_plural[exp], der)
                 else:
                     if division == 1:
-                        return "un %s" % (exponentes[exp])
+                        return "un %s" % (exponentes_plural[exp])
                     elif exp > 3:
-                        return "%s %ses" % (izq, exponentes[exp])
+                        return "%s %ses" % (izq, exponentes_plural[exp])
                     else:
-                        return "%s %s" % (izq, exponentes[exp])
+                        return "%s %s" % (izq, exponentes_plural[exp])
 
 
         elif divisor == int(number):
             if exp == 3:
-                return exponentes[exp]
+                return exponentes_plural[exp]
             else:
-                return 'un %s' % exponentes[exp]
+                return 'un %s' % exponentes_plural[exp]
 
         else:
             return func(number, indice, sing)
@@ -102,19 +106,23 @@ class Singer(object):
     def __numero_tres_cifras(self, number, indice=None, sing=False):
         """Convierte a texto numeros de tres cifras"""
         number = int(number)
-        if sing and number == 1:
-            return 'un'
-        elif number <= 15:
-            return digitos[number]
 
-        elif number < 20:
-            return 'dieci%s' % self.__numero_tres_cifras(number%10, None, sing)
+        # if sing and number == 1:
+        #     return 'un'
+        # elif number <= 15:
+        #     return digitos[number]
 
-        elif number == 20:
-            return 'veinte'
+        # elif number < 20:
+        #     return 'dieci%s' % self.__numero_tres_cifras(number%10, None, sing)
 
-        elif number < 30:
-            return 'veinti%s' % self.__numero_tres_cifras(number%10, None, sing)
+        # elif number == 20:
+        #     return 'veinte'
+
+        # elif number < 30:
+        #     return 'veinti%s' % self.__numero_tres_cifras(number%10, None, sing)
+
+        if number < 30:
+            return especiales_masculino[number]
 
         elif number < 100:
             texto = decenas[number // 10]
@@ -127,7 +135,7 @@ class Singer(object):
             return 'cien'
 
         if number < 1000:
-            texto = centenas[number // 100]
+            texto = centena_masculino[number // 100]
             resto = number % 100
             if resto:
                 texto += ' %s' % self.__numero_tres_cifras(resto, None, sing)
